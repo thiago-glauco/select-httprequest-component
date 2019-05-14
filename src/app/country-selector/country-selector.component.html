@@ -1,0 +1,10 @@
+
+<mat-form-field>
+  <mat-label from="countries">Select a country</mat-label>
+  <select matNativeControl [(ngModel)]="countryName" name="countries">
+    <option *ngFor="let name of names" [value]="name" name="countries">{{name}}</option>
+  </select>
+</mat-form-field>
+<p>
+country-selector {{countryName}}
+</p>
