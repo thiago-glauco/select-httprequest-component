@@ -1,0 +1,19 @@
+<p>
+template-form works!
+</p>
+<form novalidate
+  (ngSubmit)="save(signupForm)"
+  #signupForm="ngForm">
+  <mat-form-field>
+    <mat-label>First Name</mat-label>
+    <input matInput placeholder="First Name"
+    type="text"
+      required
+      minlength="3"
+      [(ngModel)]="customer.firstname"
+      #firstName='ngModel'
+      name='firstName',
+      #firstNameVar="ngModel">
+  </mat-form-field>
+
+</form>

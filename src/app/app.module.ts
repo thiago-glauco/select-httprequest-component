@@ -7,6 +7,7 @@ import { HttpClientModule }    from '@angular/common/http';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
 
 import 'hammerjs';
 import { AppComponent } from './app.component';
@@ -22,6 +23,7 @@ import { TemplateFormComponent } from './template-form/template-form.component';
     HttpClientModule,
     MatFormFieldModule,
     MatSelectModule,
+    MatCardModule,
     MatInputModule,
   ],
   declarations: [ AppComponent, HelloComponent, CountrySelectorComponent, TemplateFormComponent ],
