@@ -14,6 +14,7 @@ template-form works!
     #firstNameVar='ngModel'
     name='firstName'>
   </mat-form-field>
+  <mat-error *ngIf="firstNameVar.errors?.required">Name is required and must be greater thar 3 characters</mat-error>
   <button mat-raised-button>Send</button>
   <p>{{customer | json}}</p>
 </form>
