@@ -8,6 +8,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
 
 import 'hammerjs';
 import { AppComponent } from './app.component';
@@ -19,12 +20,14 @@ import { TemplateFormComponent } from './template-form/template-form.component';
 @NgModule({
   imports:      [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule, 
     HttpClientModule,
     MatFormFieldModule,
     MatSelectModule,
     MatCardModule,
     MatInputModule,
+    MatButtonModule,
   ],
   declarations: [ AppComponent, HelloComponent, CountrySelectorComponent, TemplateFormComponent ],
   bootstrap:    [ AppComponent ],

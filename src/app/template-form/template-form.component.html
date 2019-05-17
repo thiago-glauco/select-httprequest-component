@@ -8,12 +8,14 @@ template-form works!
     <mat-label>First Name</mat-label>
     <input matInput placeholder="First Name"
     type="text"
-      required
-      minlength="3"
-      [(ngModel)]="customer.firstname"
-      #firstName='ngModel'
-      name='firstName',
-      #firstNameVar="ngModel">
+    required
+    minlength="3"
+    [(ngModel)]=customer.firstName
+    #firstNameVar='ngModel'
+    name='firstName'>
   </mat-form-field>
-
+  <button mat-raised-button>Send</button>
+  <p>{{customer | json}}</p>
 </form>
+
+
