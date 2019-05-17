@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { CountriesService } from './services/countries.service';
 import { CountrySelectorComponent } from './country-selector/country-selector.component';
+import { TemplateFormComponent } from './template-form/template-form.component';
 
 @NgModule({
   imports:      [
@@ -23,7 +24,7 @@ import { CountrySelectorComponent } from './country-selector/country-selector.co
     MatSelectModule,
     MatInputModule,
   ],
-  declarations: [ AppComponent, HelloComponent, CountrySelectorComponent ],
+  declarations: [ AppComponent, HelloComponent, CountrySelectorComponent, TemplateFormComponent ],
   bootstrap:    [ AppComponent ],
   providers: [CountriesService]
 })
