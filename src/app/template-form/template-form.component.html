@@ -2,22 +2,43 @@
 template-form works!
 </p>
 <form novalidate
-  (ngSubmit)="save(signupForm)"
-  #signupForm="ngForm">
+  (ngSubmit)="save(signInForm)"
+  #signInForm="ngForm">
   <mat-form-field>
     <mat-label>First Name</mat-label>
     <input matInput placeholder="First Name"
     type="text"
     required
     minlength="3"
-    [(ngModel)]=customer.firstName
-    #firstNameVar='ngModel'
-    name='firstName'>
+    [(ngModel)]=user.username
+    #usernameVar='ngModel'
+    name='username'>
+    <mat-error *ngIf="usernameVar.hasError('required') && usernameVar.touched">Name is required</mat-error>
+    <mat-error *ngIf="usernameVar.hasError('minlength') && usernameVar.touched">Name must be greater than 3 characters</mat-error>
   </mat-form-field>
-  <mat-error *ngIf="firstNameVar.hasError('required') && firstNameVar.touched">Name is required</mat-error>
-  <mat-error *ngIf="firstNameVar.hasError('minlength') && firstNameVar.touched">Name must be greater than 3 characters</mat-error>
-  <button mat-raised-button>Send</button>
-  <p>{{customer | json}}</p>
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input matInput placeholder="Password"
+    type="password"
+    required
+    minlength="5"
+    [(ngModel)]=user.password
+    #passwordVar='ngModel'
+    name='password'>
+    <mat-error *ngIf="passwordVar.hasError('required') && passwordVar.touched">Password is required</mat-error>
+    <mat-error *ngIf="passwordVar.hasError('minlength') && passwordVar.touched">Password must be greater than 5 characters</mat-error>
+  </mat-form-field>
+
+  <button type="submit" mat-raised-button [disabled]="signInForm.status === 'INVALID'" >Send</button>
+  <p>{{user | json}}</p>
+  <p>usernameVar.touched: {{usernameVar.touched}}</p>
+  <p>usernameVar.untouched: {{usernameVar.untouched}}</p>
+  <p>usernameVar.pristine: {{usernameVar.pristine}}</p>
+  <p>usernameVar.dirty: {{usernameVar.dirty}}</p>
+  <p>usernameVar.valid: {{usernameVar.valid}}</p>
+  <p>usernameVar.errors: {{usernameVar.errors | json}}</p>
+   <p>signInForm.status {{signInForm.status}} </p>
+   <p>signInForm.errors {{signInForm.errors}} </p>
 </form>
 
 
