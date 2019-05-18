@@ -16,6 +16,7 @@ import { HelloComponent } from './hello.component';
 import { CountriesService } from './services/countries.service';
 import { CountrySelectorComponent } from './country-selector/country-selector.component';
 import { TemplateFormComponent } from './template-form/template-form.component';
+import { ForbiddenNameDirective } from './common/forbidden-name.directive';
 
 @NgModule({
   imports:      [
@@ -29,7 +30,7 @@ import { TemplateFormComponent } from './template-form/template-form.component';
     MatInputModule,
     MatButtonModule,
   ],
-  declarations: [ AppComponent, HelloComponent, CountrySelectorComponent, TemplateFormComponent ],
+  declarations: [ AppComponent, HelloComponent, CountrySelectorComponent, TemplateFormComponent, ForbiddenNameDirective ],
   bootstrap:    [ AppComponent ],
   providers: [CountriesService]
 })
